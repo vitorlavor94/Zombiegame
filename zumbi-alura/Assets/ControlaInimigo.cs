@@ -9,6 +9,12 @@ public class ControlaInimigo : MonoBehaviour
    public GameObject Jogador;
    public float Velocidade = 5;
 
+   void Start () {
+       Jogador = GameObject.FindWithTag("Jogador");
+       int geraTipoZumbi = Random.Range(1, 28);
+       transform.GetChild(geraTipoZumbi).gameObject.SetActive(true);
+   }
+
     // Update is called once per frame
   void FixedUpdate()
 {
